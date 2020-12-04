@@ -146,7 +146,7 @@ python3 extract-audio.py Savvy\ _June\ Cut_final.mp4
 
 - Furthermore, this script can handle the input name with whitespace and output coutain original file name
 - The output audio is obtain each config which needed by [Google Cloud Speech-To-Text API](https://cloud.google.com/speech-to-text/docs/languages)(see: Component2)
-- The output file name would be `audio-inputFileName.flac `, which would also be upload into `gs://test-convert-audio/audio-inputFileName.flac`(used in convert step)
+- The output file name would be `audio-inputFileName.flac `, which would also be upload into `gs://cp-translate/audio-inputFileName.flac`(used in convert step)
 
 ### `audio-to-text.py`
 
@@ -159,7 +159,7 @@ python3 audio-to-text.py localFile.flac
 For longer audio (longer than 1 min) using asynchronous speech recognition.
 
 ```shell
-python3 audio-to-text.py "gs://test-convert-audio/audio-Savvy _June Cut_final.flac"
+python3 audio-to-text.py "gs://cp-translate/audio-Savvy _June Cut_final.flac"
 ```
 
 Note: if filename with whitespace plase use `""`
@@ -188,12 +188,12 @@ Because the `response.result.alternatives[0].word` only contain word information
   - Subtitle with punctuation `audio-to-text-with-punctuation.py`:
 
     - ```shell
-      python3 audio-to-text-with-punctuation.py "gs://test-convert-audio/audio-Savvy _June Cut_final.flac"
+      python3 audio-to-text-with-punctuation.py "gs://cp-translate/audio-Savvy _June Cut_final.flac"
       ```
 
   - Subtitle no punctuation `audio-to-text-no-punctuation.py`
 
     - ```shell
-      python3 audio-to-text-no-punctuation.py "gs://test-convert-audio/audio-Savvy _June Cut_final.flac"
+      python3 audio-to-text-no-punctuation.py "gs://cp-translate/audio-Savvy _June Cut_final.flac"
       ```
 

@@ -87,11 +87,11 @@ def main():
     [input_name, input_type] = os.path.splitext(file_path)
     output_name = 'audio-' + input_name + '.flac'
     upload_file = '"' + output_name + '"'
-    cmd = "gsutil cp " + output_path + upload_file + " gs://test-convert-audio"
+    cmd = "gsutil cp " + output_path + upload_file + " gs://cp-translate"
     try:
         os.system(cmd)
         print("Upload successfully. You can use: " + '"' +
-              "gs://test-convert-audio/" + 'audio-' + output_name + '"')
+              "gs://cp-translate/" + 'audio-' + output_name + '"')
     except BaseException:
         print('error: upload failed!')
         exit(1)
